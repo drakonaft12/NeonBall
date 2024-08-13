@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -35,6 +33,16 @@ namespace Stars
         public void FallReactStars()
         {
             collectedStars--;
+            viewCollectedStars.text = collectedStars.ToString();
+        }
+
+        public void ResetStars()
+        {
+            foreach (var star in stars)
+            {
+                star.gameObject.SetActive(true);
+            }
+            collectedStars = 0;
             viewCollectedStars.text = collectedStars.ToString();
         }
     }
